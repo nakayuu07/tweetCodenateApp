@@ -1,0 +1,123 @@
+.App {
+  width: 100%;
+  height: 900px;
+  background-color: #f2f2f2;
+}
+
+
+/* ボディー */
+.main_body {
+  width: 600px;
+  height: 700px;
+  background-color: white;
+  /* position:absolute; */
+  margin: 20px auto;
+  text-align: center;
+}
+
+.main_inear {
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.login_to_image {
+  width: 510px;
+  height: 290px;
+  background-color: black;
+  margin: 10px auto;
+  padding-bottom: 10px
+}
+
+.twiiter_login {
+  width: 300px;
+  height: 65px;
+  background-color: #55ACEE;
+  margin: 30px auto;
+}
+
+.facebook_login {
+  width: 300px;
+  height: 65px;
+  background-color: #3C5A96;
+  margin: 30px auto;
+}
+
+.app_login {
+  width: 300px;
+  height: 65px;
+  background-color: black;
+  margin: 30px auto;
+}
+
+.no_app_id {
+  width: 300px;
+  height: 65px;
+  margin: 30px auto;
+}
+
+.signup_form {
+  width: 510px;
+  height: 290px;
+  margin: 10px auto;
+}
+
+.Login_form {
+  width: 510px;
+  height: 290px;
+  margin: 10px auto;
+}
+
+.MyCloset {
+  width: 100%;
+  height: 100%;
+}
+
+.MyClosetTable {
+  width: 100%;
+  height: 50px;
+}
+
+/* ヘッダー */
+.header {
+  width: 100%;
+  height: 52px;
+  background-color: white;
+}
+
+.header_title {
+  padding-top: 5px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* フッター */
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+}
+
+
+ul {
+  list-style:none;
+  padding: 0;
+  margin-top: 10px;
+  position: auto;
+  display: flex;
+  width: 600px;
+  height: 50px;
+  justify-content: center;
+}
+
+ul li{
+  height: 50px;
+  width:200px;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+}
