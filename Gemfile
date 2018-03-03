@@ -14,9 +14,12 @@ gem 'devise_token_auth'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'jbuilder', '~> 2.5'
+gem 'pry-byebug'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'pry-byebug'
+gem 'fog'
+gem 'dotenv-rails'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

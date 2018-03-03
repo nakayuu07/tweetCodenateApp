@@ -16,8 +16,7 @@ const SearchResultForm = (props) => {
     .done((results) =>{
     })
   }
-  const image_url = `..${props.image}`
-  console.log(image_url)
+  const image_url = `${props.image}`
 
   return (
     <tr>

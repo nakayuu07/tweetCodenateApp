@@ -4,7 +4,7 @@
     title: 'ユニクロ帽子',
     itemtype: 'hat',
     itemClass: 'cap',
-    image: File.open('/Users/yoshi/Desktop/hat.png')
+    image: open('/Users/yoshi/Desktop/hat.png')
   )
 end
 
@@ -14,7 +14,7 @@ end
     title: 'ユニクロ上着',
     itemtype: 'jacket-outerwear',
     itemClass: 'tailored-jacket',
-    image: File.open('/Users/yoshi/Desktop/jacket-outerwear.png')
+    image: open('/Users/yoshi/Desktop/jacket-outerwear.png')
   )
 end
 
@@ -24,7 +24,7 @@ end
     title: 'ユニクロパンツ',
     itemtype: 'pants',
     itemClass: 'denim-pants',
-    image: File.open('/Users/yoshi/Desktop/pants.png')
+    image: open('/Users/yoshi/Desktop/pants.png')
   )
 end
 
@@ -34,6 +34,6 @@ end
     title: 'ユニクロ靴',
     itemtype: 'shoes',
     itemClass: 'sneakers',
-    image: File.open('/Users/yoshi/Desktop/pants.png')
+    image: open('/Users/yoshi/Desktop/shoes.png')
   )
 end

@@ -34,11 +34,6 @@ ActiveRecord::Schema.define(version: 20180302072803) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "tweets", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "provider", default: "email", null: false
     t.string "uid", default: "", null: false
