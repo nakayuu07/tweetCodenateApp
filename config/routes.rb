@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :wear_items
   resources :want_closets
   resources :tweet_codes
+  resources :users
 end

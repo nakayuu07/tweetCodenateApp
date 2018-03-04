@@ -37,7 +37,6 @@ class CreateTweetContainer extends React.Component{
   }
 
   MayTweetPants(pants) {
-    console.log('click')
     console.log(pants)
     this.setState({Tweetpants: pants})
   }
