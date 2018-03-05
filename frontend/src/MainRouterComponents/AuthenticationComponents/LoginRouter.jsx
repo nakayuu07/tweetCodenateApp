@@ -4,6 +4,7 @@ import Login from './Login'
 import Signup from './Signup'
 import Top from './Top'
 import Modal from 'react-modal'
+import $ from 'jquery'
 
 class LoginRouter extends React.Component {
   constructor() {
@@ -24,6 +25,18 @@ class LoginRouter extends React.Component {
       } else if (this.state.whichComponent === "SignUp") {
         return <Signup modalIsOpen={modalIsOpen} closeModal={this.closeModal} />;
       }
+  }
+
+
+  handleSubmit(){
+    console.log('click')
+    $.ajax({
+      type: 'GET',
+      url:  'http://localhost:3001/auth/twitter',
+    })
+    .done((data)=>{
+      console.log(data)
+    })
   }
 
   render() {
@@ -48,6 +61,7 @@ class LoginRouter extends React.Component {
           <Top />
 
           <div className="twiiter_login">
+            <button onClick={() => this.handleSubmit()}>ツイッターログイン</button>
           </div>
 
           <div className="facebook_login">

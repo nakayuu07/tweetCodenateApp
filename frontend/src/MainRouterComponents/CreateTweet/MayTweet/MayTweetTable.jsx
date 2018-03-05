@@ -6,7 +6,8 @@ class MayTweetTable extends React.Component{
   constructor(props) {
     super(props)
     this.state = {
-      img : ''
+      img : '',
+      imgs: []
     }
   }
 
@@ -32,31 +33,36 @@ class MayTweetTable extends React.Component{
 
   makeCodeImage = () => {
     let canvas = new fabric.Canvas('test_canvas');
+
     fabric.Image.fromURL(this.props.data.Tweethat[5], function(img) {
-    var image = img.set({ left: 0, top: 0})
-    canvas.add(image);
-    });
+      var image = img.set({ left: 0, top: 0})
+      // image.crossOrigin = 'anonymous';
+      canvas.add(image);
+    }, { crossOrigin: 'Anonymous' });
 
     fabric.Image.fromURL(this.props.data.Tweettops[5], function(img) {
     var image = img.set({ left: 40, top: 40})
     canvas.add(image);
-    });
+    }, { crossOrigin: 'Anonymous' });
 
     fabric.Image.fromURL(this.props.data.Tweetpants[5], function(img) {
     var image = img.set({ left: 80, top: 80})
     canvas.add(image);
-    });
+    }, { crossOrigin: 'Anonymous' });
 
     fabric.Image.fromURL(this.props.data.Tweetshoes[5], function(img) {
     var image = img.set({ left: 120, top: 120})
     canvas.add(image);
-    });
+    }, { crossOrigin: 'Anonymous' });
 
+
+    this.setState({imgs: canvas})
     canvas.renderAll();
   }
 
   saveImage() {
-
+    const canvas = this.state.imgs
+    const img = canvas.toDataURL();
   }
 
   render() {
