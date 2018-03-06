@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :want_closets
   resources :tweet_codes
   resources :users
+  resources :relationships
 end

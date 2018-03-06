@@ -7,12 +7,14 @@ import './search.css'
 
 
 class Search extends React.Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state={
       tweetItem: [],
+      tweetUser: [],
       modalIsOpen: false,
       modalData: [],
+      modalUser: [],
     }
   }
 
@@ -20,7 +22,10 @@ class Search extends React.Component {
     const showData = this.state.tweetItem.filter((item) => {
       return (id === item.id)
     })
-    this.setState({modalIsOpen: true, modalData: showData})
+    const showUser = this.state.tweetUser.filter((user) => {
+            return (user.id === showData[0].user_id)
+        });
+    this.setState({modalIsOpen: true, modalData: showData, modalUser: showUser[0]})
   }
 
   componentDidMount() {
@@ -30,7 +35,7 @@ class Search extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results) => {
-      this.setState({tweetItem: results})
+      this.setState({tweetItem: results.tweet_items, tweetUser: results.tweet_relation_user})
     })
   }
 
@@ -52,6 +57,7 @@ class Search extends React.Component {
       }
     }
 
+
     return (
       <div className="main_body">
         <div className="main_inear">
@@ -68,7 +74,7 @@ class Search extends React.Component {
             style={customStyles}
             onRequestClose={this.closeModal}
           >
-            <DetailTweet modalData={this.state.modalData}/>
+            <DetailTweet modalData={this.state.modalData} modalUser={this.state.modalUser}/>
           </Modal>
         </div>
       </div>

@@ -3,7 +3,9 @@ class TweetCodesController < ApplicationController
 
   def index
     @tweet_items = TweetCode.all
-    render json: @tweet_items
+    @tweet_relation_user = @tweet_items.map { |n| n.user}
+
+    render json: {tweet_items: @tweet_items, tweet_relation_user: @tweet_relation_user}
   end
 
   def create
