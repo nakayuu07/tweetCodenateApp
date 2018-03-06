@@ -19,7 +19,6 @@ class TweetShow extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results) => {
-
       this.setState({Tweet_item: results})
     })
   }

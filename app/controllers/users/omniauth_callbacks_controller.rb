@@ -2,7 +2,27 @@ module Users
   class OmniauthCallbacksController < DeviseTokenAuth::OmniauthCallbacksController
     include Devise::Controllers::Rememberable
 
-      def omniauth_success
+
+    def redirect_callbacks
+
+      # derive target redirect route from 'resource_class' param, which was set
+      # before authentication.
+
+      binding.pry
+      devise_mapping = [request.env['omniauth.params']['namespace_name'],
+                        request.env['omniauth.params']['resource_class'].underscore.gsub('/', '_')].compact.join('_')
+      path = "#{Devise.mappings[devise_mapping.to_sym].fullpath}/#{params[:provider]}/callback"
+      klass = request.scheme == 'https' ? URI::HTTPS : URI::HTTP
+      redirect_route = klass.build(host: request.host, port: request.port, path: path).to_s
+
+      # preserve omniauth info for success route. ignore 'extra' in twitter
+      # auth response to avoid CookieOverflow.
+      session['dta.omniauth.auth'] = request.env['omniauth.auth'].except('extra')
+      session['dta.omniauth.params'] = request.env['omniauth.params']
+      redirect_to redirect_route
+    end
+
+    def omniauth_success
       get_resource_from_auth_hash
       set_token_on_resource
       create_auth_params
@@ -18,7 +38,7 @@ module Users
       binding.pry
 
       yield @resource if block_given?
-      render json: @resource
+      # render json: @resource
       # render_data_or_redirect('deliverCredentials', @auth_params.as_json, @resource.as_json)
     end
 

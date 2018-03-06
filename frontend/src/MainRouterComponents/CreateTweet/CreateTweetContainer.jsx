@@ -32,17 +32,14 @@ class CreateTweetContainer extends React.Component{
   }
 
   MayTweetTops(tops) {
-    console.log(tops)
     this.setState({Tweettops: tops})
   }
 
   MayTweetPants(pants) {
-    console.log(pants)
     this.setState({Tweetpants: pants})
   }
 
   MayTweetShoes(shoes) {
-    console.log(shoes)
     this.setState({Tweetshoes: shoes})
   }
 

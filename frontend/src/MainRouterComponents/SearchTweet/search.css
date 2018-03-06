@@ -1,0 +1,12 @@
+.SearchTweet {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+.contentDataId {
+  height: 250px;
+  width: 32%;
+  border: solid;
+  margin-bottom: 2px;
+}

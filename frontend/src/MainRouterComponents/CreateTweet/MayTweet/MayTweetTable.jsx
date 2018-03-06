@@ -7,7 +7,8 @@ class MayTweetTable extends React.Component{
     super(props)
     this.state = {
       img : '',
-      imgs: []
+      imgs: [],
+      doneCodeImage: '',
     }
   }
 
@@ -19,7 +20,8 @@ class MayTweetTable extends React.Component{
       data: {params :{tweet_item_hat: this.props.data.Tweethat,
                       tweet_item_tops: this.props.data.Tweettops,
                       tweet_item_pants: this.props.data.Tweetpants,
-                      tweet_item_shoes: this.props.data.Tweetshoes
+                      tweet_item_shoes: this.props.data.Tweetshoes,
+                      code_image: this.state.doneCodeImage,
                     }},
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
@@ -62,7 +64,9 @@ class MayTweetTable extends React.Component{
 
   saveImage() {
     const canvas = this.state.imgs
-    const img = canvas.toDataURL();
+    const base64 = canvas.toDataURL('image/png')
+    // const base64 = canvas.toDataURL('image/png').replace(/^.*,/, '')
+    this.setState({doneCodeImage: base64})
   }
 
   render() {
