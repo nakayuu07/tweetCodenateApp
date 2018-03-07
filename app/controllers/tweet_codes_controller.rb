@@ -11,8 +11,8 @@ class TweetCodesController < ApplicationController
   def create
     code_image = base64_conversion(params[:params][:code_image])
     sorted_tweet_data = TweetCode.sort_tweet_item(tweet_params, params[:params][:code_image])
-    # code_image.headers = ''
     sorted_tweet_data[:code_image] = code_image
+
     @tweet_item = current_user.tweet_codes.create(sorted_tweet_data)
     render json: @tweet_item
   end
