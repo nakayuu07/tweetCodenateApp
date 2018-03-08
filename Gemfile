@@ -19,6 +19,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
 gem 'dotenv-rails'
+gem 'ransack'
 
 
 group :development, :test do

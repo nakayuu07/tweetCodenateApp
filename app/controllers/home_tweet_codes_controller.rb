@@ -1,0 +1,2 @@
+class HomeTweetCodesController < ApplicationController
+end

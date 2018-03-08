@@ -7,7 +7,7 @@ class Tweets extends React.Component {
     return (
       <div className="main_body">
         <div className="main_inear">
-          <TweetShow />
+          aaa
         </div>
       </div>
 

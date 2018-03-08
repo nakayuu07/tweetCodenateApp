@@ -1,7 +1,7 @@
 class WearItemsController < ApplicationController
 
   def index
-    @WearItem = WearItem.where(title: params[:search])
+    @WearItem = WearItem.search(title: params[:search]).result
     render json: @WearItem
   end
 end
