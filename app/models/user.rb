@@ -8,6 +8,10 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
 
+  has_many :likes
+  has_many :unlikes
+
+
 
   has_many :want_closets
   has_many :tweet_codes

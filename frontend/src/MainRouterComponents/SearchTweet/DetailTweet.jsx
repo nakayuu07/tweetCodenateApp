@@ -1,9 +1,10 @@
 import React from 'react'
 import FollowButton from './FollowButton'
+import LikeButton from './LikeButton'
+import UnLikeButton from './UnLikeButton'
 
 class DetailTweet extends React.Component {
   render() {
-      console.log(this.props.modalData)
       const data = this.props.modalData[0]
     return(
         <div className="detailTable">
@@ -36,7 +37,10 @@ class DetailTweet extends React.Component {
 
             <div className="detailUser">
               {this.props.modalUser.name}
-              <FollowButton data={data}/>
+              <FollowButton data={data} />
+              <LikeButton  data={data} />
+              <UnLikeButton data={data} />
+
             </div>
           </div>
         </div>

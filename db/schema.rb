@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180306043443) do
+ActiveRecord::Schema.define(version: 20180309023549) do
+
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "tweet_code_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_code_id"], name: "index_likes_on_tweet_code_id"
+    t.index ["user_id", "tweet_code_id"], name: "index_likes_on_user_id_and_tweet_code_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "tweet_codes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "hat_name"
@@ -33,6 +43,16 @@ ActiveRecord::Schema.define(version: 20180306043443) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "code_image"
+  end
+
+  create_table "unlikes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer "user_id"
+    t.integer "tweet_code_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_code_id"], name: "index_unlikes_on_tweet_code_id"
+    t.index ["user_id", "tweet_code_id"], name: "index_unlikes_on_user_id_and_tweet_code_id", unique: true
+    t.index ["user_id"], name: "index_unlikes_on_user_id"
   end
 
   create_table "user_relationships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

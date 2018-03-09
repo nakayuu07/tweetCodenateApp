@@ -12,7 +12,7 @@ class FollowButton extends React.Component{
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     $.ajax({
       type: 'GET',
       url: 'http://localhost:3001/relationships',
@@ -20,7 +20,6 @@ class FollowButton extends React.Component{
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results)=>{
-      console.log(results)
       if(results.is_follow){
         this.setState({same_user: results.same_user,
                         is_follow: results.is_follow,

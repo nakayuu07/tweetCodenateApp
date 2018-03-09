@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :tweet_codes
   resources :users
   resources :relationships
+  resources :likes
+  resources :unlikes
 end
