@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   def update
 
 
-
+    binding.pry
     user_image = params[:image]
     user_nickname = params[:nickname]
     contents = {}
@@ -20,14 +20,13 @@ class UsersController < ApplicationController
       contents[:nickname] = user_nickname
     end
 
-    current_user.update_attribute(contents)
+    current_user.update(image: contents[:image], nickname: contents[:nickname])
 
     #何もデータが与えられていない時の処理を描きたいな
 
   end
 
   def create
-    binding.pry
   end
 
 end

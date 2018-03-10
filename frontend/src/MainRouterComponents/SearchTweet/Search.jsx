@@ -56,8 +56,6 @@ class Search extends React.Component {
         transform             : 'translate(-50%, -50%)'
       }
     }
-
-
     return (
       <div className="main_body">
         <div className="main_inear">

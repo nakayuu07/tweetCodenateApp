@@ -5,9 +5,9 @@ class TweetShowTable extends React.Component{
     return(
       <div>
         {this.props.tweetData.map((data)=>{
+          console.log(data)
           return(
             <div>
-              {data.hat_name}
             </div>
           )
         })}

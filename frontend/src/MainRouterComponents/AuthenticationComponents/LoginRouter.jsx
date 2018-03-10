@@ -8,7 +8,7 @@ import $ from 'jquery'
 
 class LoginRouter extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
       whichComponent: '',
       modalIsOpen: false
@@ -32,10 +32,19 @@ class LoginRouter extends React.Component {
     console.log('click')
     $.ajax({
       type: 'GET',
+      dataType: 'jsonp',
+      crossDomain: true,
       url:  'http://localhost:3001/auth/twitter',
+      headers: {
+        'Access-Controll-Allow-Headers': "*",
+        'Content-Type': ''
+      }
     })
     .done((data)=>{
       console.log(data)
+    })
+    .catch((results)=>{
+      console.log(results)
     })
   }
 
@@ -74,6 +83,7 @@ class LoginRouter extends React.Component {
           <div className="no_app_id">
             <a onClick={this.OpenSignUp}>IDをお持ちでない方はこちらへ</a>
           </div>
+
 
           <Modal
            isOpen={modalIsOpen}

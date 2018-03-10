@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery'
 
 import MyPageEdit from './MyPageEdit'
+import './mypage.css'
 
 class MyPageMain extends React.Component {
   constructor(props) {
@@ -58,40 +59,27 @@ class MyPageMain extends React.Component {
   render () {
     const userNickName = this.state.userNickNmae
     const userImage = this.state.userImage
-    console.log(userImage)
-
-    // if(this.state.userNickNmae === null){
-    //   console.log('1')
-    //   const userNickName = this.state.userNickNmae
-    // } else {
-    //   console.log('2')
-    //   const userNickName = '名前が登録されてません'
-    // }
-    //
-    // if(this.state.userImage === null){
-    //   console.log('3')
-    //   const userImage = this.state.userImage
-    //   const userImageAlt = "image"
-    // } else {
-    //   console.log('4')
-    //   const userImageAlt = "画像を登録してくだい"
-    // }
-    // console.log(userNickName,userImage,userImageAlt)
 
     return (
-      <div className="main_body">
-        <div className="main_inear">
-        <div>
-          <p>{userNickName}</p>
-          <img src={userImage.url} alt=""/>
+      <div>
+        <div className="mypagemain">
+          <div className="profile-image">
+            <img src={userImage.url} width="100" height="100"/>
+          </div>
+          <div className="profile-content">
+            <p>{userNickName}</p>
+            <button>プロフィール編集</button>
+          </div>
+          <div className="tweet_follow_info">
+            <p>post</p>
+            <p>followers</p>
+            <p>following</p>
+          </div>
         </div>
-        <button onClick={() => this.hundleSubmitChange()}>User編集</button>
-        <MyPageEdit
-           textData={this.state.editText}
-           onChangeEditText={(e) => this.onChangeEditText(e)}
-           hundleSubmitChange={(e)=> this.hundleSubmitChange(e)}
-           onChangeFile={(e) => this.onChangeFile(e)}
-           />
+        
+        <div className="main_body">
+          <div className="main_inear">
+          </div>
         </div>
       </div>
     )

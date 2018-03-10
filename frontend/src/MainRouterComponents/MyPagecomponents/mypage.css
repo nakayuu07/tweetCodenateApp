@@ -1,0 +1,38 @@
+.mypagemain {
+  width: 600px;
+  height: 150px;
+  text-align: center;
+  display: flex;
+  margin: 20px auto;
+  flex-wrap        : wrap;
+  background-color: white;
+  /* justify-content: space-between; */
+}
+
+.profile-image img {
+  border-radius: 50px;
+  border: 2px solid #DCDCDC;
+}
+
+.profile-content {
+  width: 450px;
+  margin-top: 10px;
+  display: flex;
+}
+
+.profile-content p {
+  font-size: 30px;
+  margin-top: 10px;
+}
+.profile-content button{
+  height: 30px;
+  margin-top: 20px;
+}
+
+.tweet_follow_info {
+  display: flex;
+}
+
+.tweet_follow_info p{
+  margin: 0  70px;
+}

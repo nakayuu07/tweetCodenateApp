@@ -8,7 +8,6 @@ module Users
       # derive target redirect route from 'resource_class' param, which was set
       # before authentication.
 
-      binding.pry
       devise_mapping = [request.env['omniauth.params']['namespace_name'],
                         request.env['omniauth.params']['resource_class'].underscore.gsub('/', '_')].compact.join('_')
       path = "#{Devise.mappings[devise_mapping.to_sym].fullpath}/#{params[:provider]}/callback"
@@ -35,7 +34,6 @@ module Users
       sign_in(:user, @resource, store: false, bypass: false)
 
       @resource.save!
-      binding.pry
 
       yield @resource if block_given?
       # render json: @resource
