@@ -6,7 +6,6 @@
   margin: 20px auto;
   flex-wrap        : wrap;
   background-color: white;
-  /* justify-content: space-between; */
 }
 
 .profile-image img {
@@ -35,4 +34,33 @@
 
 .tweet_follow_info p{
   margin: 0  70px;
+}
+
+.tweet_contents {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+.mytweet {
+  height: 250px;
+  width: 32%;
+  border: solid;
+  margin-bottom: 2px;
+  position: relative;
+}
+
+.mytweet span{
+  position:absolute;
+  height: 250px;
+  width: 192px;
+  right: 0;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.mytweet img{
+  position: relative;
+  height: 250px;
+  width: 192px;
 }

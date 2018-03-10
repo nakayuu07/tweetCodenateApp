@@ -39,10 +39,6 @@ class Search extends React.Component {
     })
   }
 
-  closeModal() {
-
-  }
-
   render () {
     const modalIsOpen = this.state.modalIsOpen
     Modal.setAppElement('div')

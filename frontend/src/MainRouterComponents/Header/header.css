@@ -1,0 +1,38 @@
+/* ヘッダー */
+.header {
+  width: 100%;
+  height: 60px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_title {
+  width: 900px;
+  padding-top: 5px;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.userIcon{
+  margin-top: 5px;
+}
+
+.userIcon img{
+  border: solid;
+  border-radius: 50%;
+  border: 2px solid #DCDCDC;
+}
+
+
+.tweetbutton {
+  margin-top: 8px;
+  height: 40px;
+  width: 40px;
+}
+
+.logo {
+  margin-top: 10px;
+}

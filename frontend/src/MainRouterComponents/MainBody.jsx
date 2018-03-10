@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
-import Header from './Header'
+import Header from './Header/Header'
 import Footer from './FooterRouter'
 import LoginRouter from './AuthenticationComponents/LoginRouter'
 import Tweets from './TweetComponents/Tweet'
