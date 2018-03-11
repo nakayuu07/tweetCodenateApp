@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :likes
   resources :unlikes
   resources :home_tweet_codes
+  resources :aggregate_infomations
 end

@@ -80,6 +80,7 @@
 
 
 /* フッター */
+
 .footer{
   position: fixed;
   bottom: 0;
@@ -90,23 +91,15 @@
   justify-content: center;
 }
 
-
-ul {
-  list-style:none;
-  padding: 0;
-  margin-top: 10px;
-  position: auto;
+.footer_ul {
+  width: 900px;
   display: flex;
-  width: 600px;
-  height: 50px;
-  justify-content: center;
+  justify-content: space-around;
+  list-style:none;
+  margin: 0;
 }
 
-ul li{
-  height: 50px;
-  width:200px;
-  display: flex;
-  justify-content: center;
+.footer_ul li {
   font-size: 30px;
 }
 

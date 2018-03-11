@@ -8,18 +8,12 @@ class MyTweet extends React.Component{
     this.state = {
       like: '',
       unlike: '',
-      isMouseOver: false,
       modalIsOpen: false,
     }
   }
 
-  handleMouseOver(){
-    console.log('ovber')
-    this.setState({isMouseOver: true})
-  }
-
-  handleMouseOut() {
-    this.setState({isMouseOver: false})
+  handleChangeModal() {
+    this.setState({modalIsOpen: true})
   }
 
 
@@ -28,7 +22,7 @@ class MyTweet extends React.Component{
     Modal.setAppElement('div')
     const customStyles = {
       content : {
-        top                   : '40%',
+        top                   : '50%',
         left                  : '50%',
         right                 : 'auto',
         bottom                : 'auto',
@@ -38,13 +32,13 @@ class MyTweet extends React.Component{
     }
 
     return(
-      <div className="mytweet" onMouseOut={() => this.handleMouseOut()}>
-        <img src={this.props.data.code_image.url} />
+      <div className="mytweet">
+        <img src={this.props.data.code_image.url} onClick={() => this.handleChangeModal()}/>
         <Modal
           isOpen={modalIsOpen}
           style={customStyles}
-          onRequestClose={this.closeModal}>
-            <DetailTweetCode />
+          onRequestClose="">
+            <DetailTweetCode data={this.props.data} />
         </Modal>
       </div>
     )
