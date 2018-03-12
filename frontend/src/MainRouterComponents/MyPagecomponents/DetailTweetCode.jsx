@@ -1,8 +1,9 @@
 import React from 'react'
 import $ from 'jquery'
-
-import { Pie } from 'react-chartjs-2';
-import Slider from 'react-slick'
+import UserSexLike from './Graph/UserSexLike'
+import UserSexUnLike from './Graph/UserSexUnLike'
+import UserAgeLike from './Graph/UserAgeLike'
+import UserAgeUnLike from './Graph/UserAgeUnLike'
 
 class DetailTweetCode extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class DetailTweetCode extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results) => {
+      console.log(results)
       this.setState({likeAge: results.like_of_age,
                      likeSex: results.like_of_sex,
                      unlikeAge: results.unlike_of_age,
@@ -32,55 +34,13 @@ class DetailTweetCode extends React.Component {
   }
 
   render() {
-    const data = {
-      labels: [
-        '男',
-        '女',
-      ],
-      datasets: [{
-        data: [this.state.likeSex.man, this.state.likeSex.woman],
-        backgroundColor: [
-        '#36A2EB',
-        '#FF6384',
-        ],
-        hoverBackgroundColor: [
-        '#36A2EB',
-        '#FF6384',
-        ]
-      }]
-    };
-
-      const options = {
-        title: {
-          display: true,
-          text: 'ツイートにいいね！を付けてくれた男女比'
-        },
-        maintainAspectRatio: false,
-        responsive: false,
-        legend: {
-          position: 'left',
-          labels: {
-            boxWidth: 10
-          }
-        }
-      }
-
-      const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1
-    };
-
+    console.log(this.state)
     return(
-      <div>
-        <Pie
-          data={data}
-          width={500}
-          height={500}
-          options={options}
-          />
+      <div className="graph">
+        <UserSexLike likeSex={this.state.likeSex} />
+        <UserSexUnLike unlikeSex={this.state.unlikeSex} />
+        <UserAgeLike likeAge={this.state.likeAge} />
+        <UserAgeUnLike unlikeAge={this.state.unlikeAge} />
       </div>
     )
   }

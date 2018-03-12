@@ -64,3 +64,8 @@
   height: 250px;
   width: 192px;
 }
+
+.graph {
+  display: flex;
+  flex-wrap: wrap;
+}

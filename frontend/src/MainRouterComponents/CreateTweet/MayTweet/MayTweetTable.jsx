@@ -3,6 +3,7 @@ import $ from 'jquery'
 import fabric from 'fabric'
 
 class MayTweetTable extends React.Component{
+
   constructor(props) {
     super(props)
     this.state = {
@@ -40,22 +41,27 @@ class MayTweetTable extends React.Component{
       var image = img.set({ left: 0, top: 0})
       // image.crossOrigin = 'anonymous';
       canvas.add(image);
-    }, { crossOrigin: 'Anonymous' });
+    });
 
     fabric.Image.fromURL(this.props.data.Tweettops[5], function(img) {
+    img.crossOrigin = "Anonymous";
     var image = img.set({ left: 40, top: 40})
+
     canvas.add(image);
-    }, { crossOrigin: 'Anonymous' });
+    });
 
     fabric.Image.fromURL(this.props.data.Tweetpants[5], function(img) {
+    img.crossOrigin = "Anonymous";
     var image = img.set({ left: 80, top: 80})
     canvas.add(image);
-    }, { crossOrigin: 'Anonymous' });
+    });
 
     fabric.Image.fromURL(this.props.data.Tweetshoes[5], function(img) {
+    img.crossOrigin = "Anonymous";
     var image = img.set({ left: 120, top: 120})
+
     canvas.add(image);
-    }, { crossOrigin: 'Anonymous' });
+    });
 
 
     this.setState({imgs: canvas})
@@ -64,9 +70,32 @@ class MayTweetTable extends React.Component{
 
   saveImage() {
     const canvas = this.state.imgs
-    const base64 = canvas.toDataURL('image/png')
-    // const base64 = canvas.toDataURL('image/png').replace(/^.*,/, '')
+    var hatImage = new Image();
+    hatImage.crossOrigin = "Anonymous";
+    hatImage.src = this.props.data.Tweethat[5]
+
+    // var topsImage = new Image();
+    // topsImage.crossOrigin = "Anonymous";
+    // topsImage.src = this.props.data.Tweettops[5]
+    //
+    // var pantsImage = new Image();
+    // pantsImage.crossOrigin = "Anonymous";
+    // pantsImage.src = this.props.data.Tweetpants[5]
+    //
+    // var shoesImage = new Image();
+    // shoesImage.crossOrigin = "Anonymous";
+    // shoesImage.src = this.props.data.Tweetshoes[5]
+
+     const canvas2 = document.createElement("canvas")
+     var ctx = canvas2.getContext("2d");
+     ctx.drawImage(hatImage, canvas._objects[0].top, canvas._objects[0].width)
+     // ctx.drawImage(topsImage, canvas._objects[1].top, canvas._objects[1].width)
+     // ctx.drawImage(pantsImage, canvas._objects[2].top, canvas._objects[2].width)
+     // ctx.drawImage(shoesImage, canvas._objects[3].top, canvas._objects[3].width)
+     var base64 = canvas2.toDataURL();
+
     this.setState({doneCodeImage: base64})
+    debugger
   }
 
   render() {
@@ -78,7 +107,6 @@ class MayTweetTable extends React.Component{
         <button onClick={() => this.makeCodeImage()}>イメージ作成</button>
         <button onClick={() => this.saveImage()}>イメージ保存</button>
         <canvas id="test_canvas" width="300" height="300"></canvas>
-        <img src={this.state.img} alt=""/>
         <tbody>
           <tr>
             <td >{this.props.data.Tweethat}</td>

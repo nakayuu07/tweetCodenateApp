@@ -1,0 +1,51 @@
+import React from 'react'
+import { Pie } from 'react-chartjs-2';
+
+class UserSexLike extends React.Component{
+
+  render() {
+    const data = {
+      labels: [
+        '男',
+        '女',
+      ],
+      datasets: [{
+        data: [this.props.likeSex.man, this.props.likeSex.woman],
+        backgroundColor: [
+        '#36A2EB',
+        '#FF6384',
+        ],
+        hoverBackgroundColor: [
+        '#36A2EB',
+        '#FF6384',
+        ]
+      }]
+    };
+
+      const options = {
+        title: {
+          display: true,
+          text: 'ツイートにいいね！を付けてくれた男女比'
+        },
+        maintainAspectRatio: false,
+        responsive: false,
+        legend: {
+          position: 'left',
+          labels: {
+            boxWidth: 10
+          }
+        }
+      }
+
+    return(
+      <Pie
+        data={data}
+        width={400}
+        height={400}
+        options={options}
+        />
+    )
+  }
+}
+
+export default UserSexLike
