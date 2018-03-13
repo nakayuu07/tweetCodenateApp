@@ -98,7 +98,6 @@ class MayTweetTable extends React.Component{
      // ctx.drawImage(pantsImage, canvas._objects[2].top, canvas._objects[2].width)
      // ctx.drawImage(shoesImage, canvas._objects[3].top, canvas._objects[3].width)
      var base64 = canvas2.toDataURL();
-    debugger
 
     this.setState({doneCodeImage: base64})
   }

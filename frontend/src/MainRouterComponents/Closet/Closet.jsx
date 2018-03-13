@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal'
 import axios from 'axios'
 import $ from 'jquery'
+import MyClosetSelector from './MyClosetSelector'
 
 import ItemSearch from './ItemSearch'
 import SearchResult from './SearchResult'
@@ -62,13 +63,22 @@ class Closet extends React.Component {
     }
 
     return (
-      <div className="main_body">
-        <ItemSearch item={this.state.item} handlePlaceChange={ this.handlePlaceChange } handleSubmit={ this.handleSubmit }  />
-        <div className="main_inear">
-          <MyCloset userClosetData={this.state.userClosetData} match={this.props.match}/>
-          <Modal isOpen={modalIsOpen} style={customStyles}>
-             <SearchResult data={ this.state.data } CloseSearchResult={ this.CloseSearchResult }/>
-          </Modal>
+      <div>
+        <div className="closet">
+          <div>
+            <ItemSearch item={this.state.item} handlePlaceChange={ this.handlePlaceChange } handleSubmit={ this.handleSubmit }  />
+          </div>
+          <div>
+            <MyClosetSelector url={this.props.match.url}/>
+          </div>
+        </div>
+        <div className="main_body_closet">
+          <div className="main_inear_closet">
+            <MyCloset userClosetData={this.state.userClosetData} match={this.props.match}/>
+            <Modal isOpen={modalIsOpen} style={customStyles}>
+               <SearchResult data={ this.state.data } CloseSearchResult={ this.CloseSearchResult }/>
+            </Modal>
+          </div>
         </div>
       </div>
     )

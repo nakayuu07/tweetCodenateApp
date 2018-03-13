@@ -33,6 +33,7 @@ class MyPageMain extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((res) =>{
+
       this.setState({ age: res.user_data.age,
                       sex: res.user_data.sex,
                       userNickNmae: res.user_data.nickname,
@@ -41,6 +42,9 @@ class MyPageMain extends React.Component {
                       userTweetSum: res.user_tweet_sum,
                       following: res.user_following_sum,
                       follower: res.user_followers_sum})
+      if(this.state.age===null || this.state.sex===null){
+        this.setState({modalIsOpen: true})
+      }
     })
   }
 
@@ -64,11 +68,6 @@ class MyPageMain extends React.Component {
         marginRight           : '-20%',
         transform             : 'translate(-50%, -50%)'
       }
-    }
-
-    console.log(this.state)
-    if(this.state.age===null || this.state.sex===null){
-      this.setState({modalIsOpen: true})
     }
 
 

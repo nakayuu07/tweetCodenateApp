@@ -1,9 +1,7 @@
 import React from 'react'
 import $ from 'jquery'
 
-
 const SearchResultForm = (props) => {
-
   this.RegistrationItem = () => {
     $.ajax({
       type: 'POST',
