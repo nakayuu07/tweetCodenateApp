@@ -2,6 +2,7 @@ import React from 'react'
 import $ from 'jquery'
 import ItemListForTweet from './ClosetForTweet/ItemListForTweet'
 import MayTweet from './MayTweet/MayTweet'
+import MayTweetTable from './MayTweet/MayTweetTable'
 
 class CreateTweetContainer extends React.Component{
   constructor(props) {
@@ -46,7 +47,8 @@ class CreateTweetContainer extends React.Component{
   render() {
     return(
       <div className="main_body">
-        <MayTweet data={this.state}/>
+
+        <MayTweetTable data={this.state}/>
         <ItemListForTweet
           match={this.props.match}
           Mydata={this.state.Mydata}

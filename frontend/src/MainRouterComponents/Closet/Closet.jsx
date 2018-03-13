@@ -6,6 +6,7 @@ import $ from 'jquery'
 import ItemSearch from './ItemSearch'
 import SearchResult from './SearchResult'
 import MyCloset from './MyCloset'
+import './closet.css'
 
 class Closet extends React.Component {
   constructor() {

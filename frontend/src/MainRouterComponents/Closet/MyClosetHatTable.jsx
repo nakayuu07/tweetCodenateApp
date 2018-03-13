@@ -3,19 +3,13 @@ import React from 'react'
 
 const MyClosetHatTable = (props) => {
   return (
-    <table className="MyClosetHatTable">
-      <tbody>
+    <div className="MyClosetHatTable">
       {props.data.map((hat) => {
         return(
-          <tr className="MyclosetHatTr" key={hat.id}>
-            <td><img alt='' src={hat.image} /></td>
-            <td>{hat.makers}</td>
-            <td>{hat.title}</td>
-          </tr>
+            <img alt='' src={hat.image} key={hat.id} height="300px" width="300px" />
         )
       })}
-      </tbody>
-    </table>
+    </div>
   )
 }
 

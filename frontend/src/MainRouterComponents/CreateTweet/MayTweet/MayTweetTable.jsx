@@ -73,6 +73,8 @@ class MayTweetTable extends React.Component{
     var hatImage = new Image();
     hatImage.crossOrigin = "Anonymous";
     hatImage.src = this.props.data.Tweethat[5]
+    hatImage.height = 10
+    hatImage.width = 10
 
     // var topsImage = new Image();
     // topsImage.crossOrigin = "Anonymous";
@@ -88,14 +90,17 @@ class MayTweetTable extends React.Component{
 
      const canvas2 = document.createElement("canvas")
      var ctx = canvas2.getContext("2d");
-     ctx.drawImage(hatImage, canvas._objects[0].top, canvas._objects[0].width)
+     // ctx.fillRect(20,40,50,100)
+     // ctx.strokeStyle = 'rgb(00,00,255)'
+
+     ctx.drawImage(hatImage, 0, 0)
      // ctx.drawImage(topsImage, canvas._objects[1].top, canvas._objects[1].width)
      // ctx.drawImage(pantsImage, canvas._objects[2].top, canvas._objects[2].width)
      // ctx.drawImage(shoesImage, canvas._objects[3].top, canvas._objects[3].width)
      var base64 = canvas2.toDataURL();
+    debugger
 
     this.setState({doneCodeImage: base64})
-    debugger
   }
 
   render() {

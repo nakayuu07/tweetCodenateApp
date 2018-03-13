@@ -1,0 +1,18 @@
+.myClosetSelector {
+  display: flex;
+  justify-content: space-around;
+}
+
+.myClosetSelector div{
+  font-size: 30px;
+}
+
+.MyClosetHatTable {
+}
+
+
+.MyClosetTopsTable {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}

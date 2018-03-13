@@ -8,9 +8,7 @@ const MyClosetShoesTable = (props) => {
       {props.data.map((shoes) => {
         return(
           <tr className="MyclosetShoesTr" key={shoes.id}>
-            <td><img alt='' src={shoes.image} /></td>
-            <td>{shoes.makers}</td>
-            <td>{shoes.title}</td>
+            <td><img alt='' src={shoes.image} width="30" height="30"/></td>
           </tr>
         )
       })}
