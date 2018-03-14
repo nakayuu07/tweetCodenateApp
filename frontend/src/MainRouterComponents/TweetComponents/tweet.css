@@ -4,6 +4,17 @@
   margin: auto;
 }
 
+.tweet_user {
+  display: flex;
+}
+
+.tweet_user img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+  border: 2px solid #DCDCDC;
+}
+
 .tweet_items {
   display: flex;
   flex-direction: column;
@@ -12,7 +23,30 @@
 
 .tweet_item {
   width: 600px;
-  height: 300px;
+  height: 350px;
   margin-top: 20px;
   background-color: white;
+}
+
+.show_tweet_info {
+  display: flex;
+}
+
+.show_tweet_info table{
+  margin-left: 20px;
+}
+
+.tweet_code_image {
+  height: 200px;
+  width: 300px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.num_like_unlike {
+  display: flex;
 }

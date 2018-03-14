@@ -5,6 +5,9 @@ class HomeTweetCodesController < ApplicationController
     current_user_following.each do |following_user|
       tweet_codes = TweetCode.where(user_id: following_user[:followed_id])
       tweet_codes.each do |tweet_code|
+        tweet_likes = tweet_code.likes.length
+        tweet_unlikes = tweet_code.unlikes.length
+
         @show_tweet_data.concat([tweet_code])
       end
     end
@@ -15,12 +18,17 @@ class HomeTweetCodesController < ApplicationController
 
     @show_tweet_data = @show_tweet_data.sort_by(&:id).reverse
 
-    render json: @show_tweet_data
+    @tweet_likes_data = []
+    @show_tweet_data.each do |tweet_code|
+      tweet_likes = tweet_code.likes.length
+      tweet_unlikes = tweet_code.unlikes.length
+      tweet_user = tweet_code.user
+      @tweet_likes_data.concat([[tweet_code, tweet_likes, tweet_unlikes, tweet_user]])
+    end
+    render json: @tweet_likes_data
   end
 
 
   def show
-    tweet_code = TweetCode.find(params[:id])
-    binding.pry
   end
 end

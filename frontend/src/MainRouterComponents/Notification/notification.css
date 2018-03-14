@@ -1,0 +1,36 @@
+.notifi_body {
+  width: 900px;
+  height: 600px;
+  /* position:absolute; */
+  margin: auto;
+  text-align: center;
+
+}
+
+.inner {
+  display: flex;
+}
+
+.tweet_item {
+  width: 600px;
+  height: 400px;
+  background-color: white;
+  text-align: center;
+  margin: 30px auto;
+  position: relative;
+}
+
+.tweet_table {
+  width: 600px;
+  height: 400px;
+  text-align: center;
+  margin: 30px auto;
+  position: absolute;
+  bottom: -30px;
+}
+
+.user_image {
+  border: 1px solid #ccc;
+  height: 400px;
+  width: 300px;
+}
