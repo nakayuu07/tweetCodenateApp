@@ -8,20 +8,16 @@ class MyClosetShoesTableForTweet extends React.Component{
 
   render() {
     return (
-      <table>
-        <tbody>
+      <div className="closet-table">
         {this.props.data.map((shoes) => {
           let shoes_array = Object.keys(shoes).map(key => shoes[key])
           return(
-            <tr key={shoes.id} onClick={() => this.props.selectItemFunction(shoes_array)}>
-              <td><img alt='' src={shoes.image} /></td>
-              <td>{shoes.makers}</td>
-              <td>{shoes.title}</td>
-            </tr>
+            <div className="item-frame" key={shoes.id} onClick={() => this.props.selectItemFunction(shoes_array)}>
+              <img alt='' src={shoes.image} />
+            </div>
           )
         })}
-        </tbody>
-      </table>
+      </div>
     )
   }
 }

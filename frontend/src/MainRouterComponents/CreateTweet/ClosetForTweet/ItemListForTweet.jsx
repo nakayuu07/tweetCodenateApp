@@ -1,5 +1,4 @@
 import React from 'react'
-import MyClosetSelectorForTweet from './MyClosetSelectorForTweet'
 import MyClosetRouterForTweet from './MyClosetRouterForTweet'
 
 
@@ -10,7 +9,6 @@ class ItemListForTweet extends React.Component{
     const url = this.props.match.url
     return(
       <div className="itemLists">
-        <MyClosetSelectorForTweet url={url}/>
         <MyClosetRouterForTweet
           userClosetData={userClosetData}
           path={this.props.match.path}

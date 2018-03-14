@@ -7,22 +7,17 @@ class MyClosetPantsTableForTweet extends React.Component{
   }
 
   render() {
-    console.log(this.props)
     return (
-      <table>
-        <tbody>
+      <div className="closet-table">
         {this.props.data.map((pants) => {
           let pants_array = Object.keys(pants).map(key => pants[key])
           return(
-            <tr key={pants.id} onClick={() => this.props.selectItemFunction(pants_array)}>
-              <td><img alt='' src={pants.image} /></td>
-              <td>{pants.makers}</td>
-              <td>{pants.title}</td>
-            </tr>
+            <div className="item-frame" key={pants.id} onClick={() => this.props.selectItemFunction(pants_array)}>
+              <img alt='' src={pants.image} />
+            </div>
           )
         })}
-        </tbody>
-      </table>
+      </div>
     )
   }
 }

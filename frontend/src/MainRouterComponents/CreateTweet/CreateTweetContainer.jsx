@@ -1,8 +1,9 @@
 import React from 'react'
 import $ from 'jquery'
 import ItemListForTweet from './ClosetForTweet/ItemListForTweet'
-import MayTweet from './MayTweet/MayTweet'
 import MayTweetTable from './MayTweet/MayTweetTable'
+import './CreateTweet.css'
+import MyClosetSelectorForTweet from './ClosetForTweet/MyClosetSelectorForTweet'
 
 class CreateTweetContainer extends React.Component{
   constructor(props) {
@@ -46,17 +47,21 @@ class CreateTweetContainer extends React.Component{
 
   render() {
     return(
-      <div className="main_body">
-
-        <MayTweetTable data={this.state}/>
-        <ItemListForTweet
-          match={this.props.match}
-          Mydata={this.state.Mydata}
-          selectItemFunctionHat={(hat) => this.MayTweetHat(hat)}
-          selectItemFunctionTops={(tops) => this.MayTweetTops(tops)}
-          selectItemFunctionPants={(pants) => this.MayTweetPants(pants)}
-          selectItemFunctionShoes={(shoes) => this.MayTweetShoes(shoes)}
-        />
+      <div>
+        <div className="May_tweet_table">
+          <MayTweetTable data={this.state}/>
+        </div>
+        <MyClosetSelectorForTweet url={this.props.match.url} />
+        <div className="main_body_tweet">
+          <ItemListForTweet
+            match={this.props.match}
+            Mydata={this.state.Mydata}
+            selectItemFunctionHat={(hat) => this.MayTweetHat(hat)}
+            selectItemFunctionTops={(tops) => this.MayTweetTops(tops)}
+            selectItemFunctionPants={(pants) => this.MayTweetPants(pants)}
+            selectItemFunctionShoes={(shoes) => this.MayTweetShoes(shoes)}
+          />
+        </div>
       </div>
     )
   }

@@ -1,0 +1,64 @@
+.main_body_tweet{
+  width: 900px;
+  height: 600px;
+  background-color: white;
+  /* position:absolute; */
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.may-tweet {
+  margin-top: 10px;
+  background-color: white;
+}
+
+.May_tweet_table {
+  width: 800px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.submit-button {
+}
+
+.show-tweet {
+  display: flex;
+  justify-content: space-around;
+}
+
+.show-tweet canvas{
+  border: 1px solid #ccc;
+}
+
+.show-tweet table{
+  height: 300px;
+  width: 300px;
+}
+
+.selector-item {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  width: 900px;
+  margin: 20px auto 0;
+}
+
+.selector-item div{
+  font-size: 30px;
+}
+
+.closet-table {
+  width: 900px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-frame {
+  height: 200px;
+  width: 295px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

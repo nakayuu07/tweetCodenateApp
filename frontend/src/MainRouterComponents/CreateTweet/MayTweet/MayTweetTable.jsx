@@ -1,6 +1,8 @@
 import React from 'react'
 import $ from 'jquery'
 import fabric from 'fabric'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import RaisedButton from 'material-ui/RaisedButton';
 
 class MayTweetTable extends React.Component{
 
@@ -104,22 +106,54 @@ class MayTweetTable extends React.Component{
 
   render() {
     const data = this.props.data
+    const style = {
+        margin: 3,
+      };
     return(
-      <table>
-        <span onClick={() => this.handleSubmitTweet()}>投稿する</span>
-        <span>ツイート＋投稿する</span>
-        <button onClick={() => this.makeCodeImage()}>イメージ作成</button>
-        <button onClick={() => this.saveImage()}>イメージ保存</button>
-        <canvas id="test_canvas" width="300" height="300"></canvas>
-        <tbody>
-          <tr>
-            <td >{this.props.data.Tweethat}</td>
-            <td>{this.props.data.Tweettops}</td>
-            <td>{this.props.data.Tweetpants}</td>
-            <td>{this.props.data.Tweetshoes}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <MuiThemeProvider>
+          <RaisedButton label="投稿する"  fullWidth={true} style={style} labelColor={'#ffffff'} backgroundColor='black' />
+        </MuiThemeProvider>
+        <div className="may-tweet">
+          <div className="submit-button">
+            <MuiThemeProvider>
+              <button onClick={() => this.handleSubmitTweet()}>投稿する</button>
+              <button onClick={() => this.makeCodeImage()}>イメージ作成</button>
+              <button onClick={() => this.saveImage()}>イメージ保存</button>
+            </MuiThemeProvider>
+          </div>
+          <div className="show-tweet">
+            <canvas id="test_canvas" width="300" height="300" className="canvas"></canvas>
+            <table>
+              <thead>
+                <tr>
+                  <td>画像</td>
+                  <td>商品名</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><img src={data.Tweethat[5]} alt="" height="50px" width="50px"/></td>
+                  <td>{data.Tweethat[2]}</td>
+                </tr>
+                <tr>
+                  <td><img src={data.Tweettops[5]} alt="" height="50px" width="50px"/></td>
+                  <td>{data.Tweettops[2]}</td>
+                </tr>
+                <tr>
+                  <td><img src={data.Tweetpants[5]} alt="" height="50px" width="50px"/></td>
+                  <td>{data.Tweetpants[2]}</td>
+                </tr>
+                <tr>
+                  <td><img src={data.Tweetshoes[5]} alt="" height="50px" width="50px"/></td>
+                  <td>{data.Tweetshoes[2]}</td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+        </div>
+      </div>
     )
   }
 }
