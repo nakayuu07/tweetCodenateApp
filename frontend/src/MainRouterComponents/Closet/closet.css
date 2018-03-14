@@ -33,6 +33,7 @@
   width: 900px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .item_frame {

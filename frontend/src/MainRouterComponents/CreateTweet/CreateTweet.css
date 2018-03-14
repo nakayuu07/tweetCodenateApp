@@ -51,6 +51,7 @@
   width: 900px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .item-frame {
@@ -59,6 +60,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   border: 1px solid #ccc;
   border-radius: 4px;
 }
