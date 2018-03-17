@@ -1,6 +1,6 @@
 import React from 'react'
 import $ from 'jquery'
-import FaThumbsOUp from 'react-icons/lib/fa/thumbs-o-up'
+import FaThumbsUp from 'react-icons/lib/fa/thumbs-up'
 
 class TweetLikeButton extends React.Component{
   constructor(props) {
@@ -8,7 +8,8 @@ class TweetLikeButton extends React.Component{
     this.state={
       buttonString: 'いいね',
       tweetData: [],
-      already_like: false
+      already_like: false,
+      colorLike: "#ccc"
     }
   }
 
@@ -23,7 +24,8 @@ componentDidMount(){
   .done((results) => {
     if (results.already_likes === true){
       this.setState({already_like: results.already_likes,
-                    buttonString: 'いいね済み'})
+                     buttonString: 'いいね済み',
+                     colorLike: 'black'})
 
     }else{
       this.setState({already_like: results.already_likes})
@@ -41,7 +43,8 @@ handleSubmit() {
     })
     .done((results)=>{
       this.setState({already_like: true,
-                      buttonString: 'いいね済み'})
+                      buttonString: 'いいね済み',
+                      colorLike: 'black'})
       this.props.handlePlusLike(this.props.likeNum)
     })
   }else{
@@ -52,7 +55,8 @@ handleSubmit() {
     })
     .done((results) => {
       this.setState({already_like: false,
-                      buttonString: 'いいね！'})
+                     buttonString: 'いいね！',
+                     colorLike: '#ccc'})
       this.props.handleMinusLike(this.props.likeNum)
     })
   }
@@ -60,9 +64,7 @@ handleSubmit() {
 
   render() {
     return(
-      <div>
-        <button onClick={() => this.handleSubmit()}>{this.state.buttonString}</button>
-      </div>
+      <FaThumbsUp onClick={() => this.handleSubmit()} color={this.state.colorLike} size={25}/>
     )
   }
 }

@@ -44,7 +44,11 @@
 
 .button {
   display: flex;
-  justify-content: center;
+  padding: 10px;
+}
+
+.button svg{
+  margin: 0 5px;
 }
 
 .num_like_unlike {

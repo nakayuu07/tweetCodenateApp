@@ -1,5 +1,6 @@
 import React from 'react'
 import $ from 'jquery'
+import FaThumbsDown from 'react-icons/lib/fa/thumbs-down'
 
 class TweetUnLikeButton extends React.Component{
   constructor(props) {
@@ -7,7 +8,8 @@ class TweetUnLikeButton extends React.Component{
     this.state={
       buttonString: '悪いね！',
       tweetData: [],
-      already_unlike: false
+      already_unlike: false,
+      colorUnlike: "#ccc"
     }
   }
 
@@ -23,7 +25,8 @@ componentDidMount(){
     console.log(results)
     if(results.already_unlike === true){
       this.setState({already_unlike: true,
-                      buttonString: '悪いね済み'})
+                     buttonString: '悪いね済み',
+                     colorUnlike: 'black'})
     }
   })
 }
@@ -38,7 +41,8 @@ handleSubmit() {
     })
     .done((results)=>{
       this.setState({already_unlike: true,
-                    buttonString: '悪いね済み'})
+                    buttonString: '悪いね済み',
+                    colorUnlike: 'black'})
       this.props.handlePlusUnLike(this.props.unlikeNum)
     })
   }else{
@@ -49,7 +53,8 @@ handleSubmit() {
     })
     .done((results) => {
       this.setState({already_unlike: false,
-                      buttonString: '悪いね！'})
+                      buttonString: '悪いね！',
+                    colorUnlike: '#ccc'})
       this.props.handleMinusUnLike(this.props.unlikeNum)
     })
   }
@@ -57,9 +62,7 @@ handleSubmit() {
 
   render() {
     return(
-      <div>
-        <button onClick={() => this.handleSubmit()}>{this.state.buttonString}</button>
-      </div>
+      <FaThumbsDown color={this.state.colorUnlike} size={25} onClick={() => this.handleSubmit()}/>
     )
   }
 }

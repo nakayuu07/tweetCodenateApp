@@ -7,6 +7,7 @@ import TweetFollowButton from './TweetFollowButton'
 import UserInfo from './UserInfo'
 
 
+
 class TweetItem extends React.Component{
   constructor() {
     super()
@@ -102,10 +103,7 @@ class TweetItem extends React.Component{
             handlePlusUnLike={(num)=>this.handlePlusUnLike(num)}
             handleMinusUnLike={(num)=>this.handleMinusUnLike(num)}
              />
-          <TweetFollowButton data={this.props.data[0]} />
-          <button>コメント</button>
         </div>
-
         <div className="num_like_unlike">
           <div>イイネ! {this.state.likeNum}件</div>
           <div>ワルイ! {this.state.unlikeNum}件</div>
