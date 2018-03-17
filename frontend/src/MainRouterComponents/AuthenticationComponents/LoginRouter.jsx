@@ -2,9 +2,10 @@ import React from 'react';
 
 import Login from './Login'
 import Signup from './Signup'
-import Top from './Top'
 import Modal from 'react-modal'
 import $ from 'jquery'
+import Image from './Artboard.png'
+import './login.css'
 
 class LoginRouter extends React.Component {
   constructor() {
@@ -27,9 +28,11 @@ class LoginRouter extends React.Component {
       }
   }
 
+  componentDidMount() {
+  }
+
 
   handleSubmit(){
-    console.log('click')
     $.ajax({
       type: 'GET',
       dataType: 'jsonp',
@@ -65,23 +68,18 @@ class LoginRouter extends React.Component {
 
 
     return (
-      <div className="main_body">
-        <div className="main_inear">
-          <Top />
+        <div className="login-page">
+          <img src={Image} alt="" height="250@px" width="500px"/>
+          <div className="login-buttons">
+            <div>
+              <a href="#" class="square_btn">
+              	<span onClick={this.OpenLogin}>BUTTON</span>
+              </a>
+            </div>
 
-          <div className="twiiter_login">
-            <button onClick={() => this.handleSubmit()}>ツイッターログイン</button>
-          </div>
-
-          <div className="facebook_login">
-          </div>
-
-          <div className="app_login">
-            <button onClick={this.OpenLogin}>ボタン</button>
-          </div>
-
-          <div className="no_app_id">
-            <a onClick={this.OpenSignUp}>IDをお持ちでない方はこちらへ</a>
+            <div className="no_app_id">
+              <a onClick={this.OpenSignUp}>IDをお持ちでない方はこちらへ</a>
+            </div>
           </div>
 
 
@@ -92,7 +90,6 @@ class LoginRouter extends React.Component {
              {ModalComponent}
           </Modal>
         </div>
-      </div>
       )
     }
   }

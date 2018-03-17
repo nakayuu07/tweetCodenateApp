@@ -18,7 +18,7 @@ const SearchResultForm = (props) => {
 
   return (
     <tr>
-      <td><img src={image_url} alt="a" width="10" height="10"/></td>
+      <td><img src={image_url} alt="a" width="30" height="30"/></td>
       <td>{props.maker}</td>
       <td>{props.title}</td>
       <button onClick={this.RegistrationItem}>myクローゼットに追加</button>

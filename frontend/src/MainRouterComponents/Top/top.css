@@ -1,0 +1,176 @@
+
+
+.top-body {
+  height: 100%;
+  width: 100%;
+  background: #151515 url('./gazo1.jpg') no-repeat fixed left bottom;
+  background-size: cover;
+
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: Raleway, "Hiragino Kaku Gothic ProN",  Meiryo,  sans-serif;
+  font-size: 62.5%;
+}
+
+/* parts */
+
+.heading {
+  position: relative;
+  display: inline-block;
+  margin: 10px 0 15px;
+  padding-bottom: 15px;
+  letter-spacing: 2px;
+  font-size: 2rem;
+}
+.heading::before,
+.heading::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-bottom: 1px solid #999;
+}
+.heading::before {
+  bottom: 5px;
+}
+
+/* header */
+
+.top-header {
+  padding: 360px 30px;
+}
+
+.site-title {
+  animation-name: anime1;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+  animation-delay: -2s;
+}
+
+@keyframes anime1 {
+0% {color: white;}
+100% {color: black;}
+}
+
+
+/* section1 */
+
+.about {
+  padding: 80px 30px;
+  background-color: #fff;
+  color: #333;
+}
+
+.about-app-wrapper {
+  display: table;
+  width: 80%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+}
+
+.about-app-box {
+  display: table-cell;
+}
+
+.about-app-icon {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 30px;
+  border: 4px solid;
+  border-radius: 50%;
+  color: #f1b400;
+  font-size: 8rem;
+  line-height: 142px;
+}
+
+.about-app-title {
+  margin: 0 20px 20px;
+  font-size: 1.5rem;
+}
+
+.about-app-text {
+  margin: 0 20px;
+  line-height: 2;
+  font-size: 0.7rem;
+}
+
+/* セクション2 */
+
+.fav {
+  padding: 80px 30px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.tweet-wrapper {
+  display: table;
+  width: 80%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+}
+
+.tweet-box {
+  display: table-cell;
+}
+
+.tweet-img {
+  background-color: #fff;
+  margin: 0 10px;
+}
+
+.tweet-botton {
+  margin: 10px 0;
+}
+
+/* 第３セクション*/
+
+.app-about {
+  padding: 80px 30px;
+  background-color: #fff;
+  color: #333;
+}
+
+.app-about-text {
+  margin: 30px 0;
+  line-height: 2.5;
+  font-size: 0.9rem;
+}
+
+/* 第４セクション */
+.start-app {
+  padding: 80px 30px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.start-app-wrapper {
+  display: table;
+  width: 30%;
+  margin: 50px auto 0;
+  table-layout: fixed;
+}
+
+.start-button {
+  display: table-cell;
+  width: 250px;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #D29E04;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+.start-button:hover {
+  opacity: 0.9;
+}
+
+/* footer */
+
+.top-footer {
+  background: #2d2d2d;
+  font-size: 1rem;
+  height: 40px;
+}

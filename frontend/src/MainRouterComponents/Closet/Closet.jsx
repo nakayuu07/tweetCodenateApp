@@ -63,17 +63,11 @@ class Closet extends React.Component {
     }
 
     return (
-      <div>
+      <div className="closet-container">
         <div className="closet">
-          <div>
-            <ItemSearch item={this.state.item} handlePlaceChange={ this.handlePlaceChange } handleSubmit={ this.handleSubmit }  />
-          </div>
-          <div>
-            <MyClosetSelector url={this.props.match.url}/>
-          </div>
-        </div>
-        <div className="main_body_closet">
-          <div className="main_inear_closet">
+          <ItemSearch item={this.state.item} handlePlaceChange={ this.handlePlaceChange } handleSubmit={ this.handleSubmit }  />
+          <MyClosetSelector url={this.props.match.url}/>
+          <div className="main_body_closet">
             <MyCloset userClosetData={this.state.userClosetData} match={this.props.match}/>
             <Modal isOpen={modalIsOpen} style={customStyles}>
                <SearchResult data={ this.state.data } CloseSearchResult={ this.CloseSearchResult }/>

@@ -9,7 +9,7 @@ class MyClosetSelector extends React.Component{
   render() {
     return(
       <div className="myClosetSelector">
-        <div><Link to={`${this.props.url}/hat`}><FaBomb /></Link></div>
+        <div><Link to={`${this.props.url}`}><FaBomb /></Link></div>
         <div><Link to={`${this.props.url}/tops`}><FaMotorcycle /></Link></div>
         <div><Link to={`${this.props.url}/pants`}><FaThumbsOUp /></Link></div>
         <div><Link to={`${this.props.url}/shoes`}><FaOdnoklassnikiSquare /></Link></div>

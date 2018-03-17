@@ -1,21 +1,25 @@
+.closet-container{
+  height: 100%;
+  margin: auto;
+}
+
 .closet {
   width: 900px;
   text-align: center;
-  /* margin: 20px auto; */
+  margin: 20px auto;
   margin: 0 auto ;
 }
 
 .main_body_closet {
   width: 900px;
-  height: 600px;
-  background-color: white;
+  height: 100%;
   /* position:absolute; */
   margin: 0 auto 20px;
   text-align: center;
 }
 
 .main_inear_closet {
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
 }
 
@@ -27,7 +31,6 @@
 .myClosetSelector div{
   font-size: 30px;
 }
-
 
 .MyClosetTable {
   width: 900px;
@@ -44,4 +47,10 @@
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: white;
+  margin-top: 3px;
+}
+
+.router {
+  height: 100%;
 }

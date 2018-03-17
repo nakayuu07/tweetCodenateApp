@@ -1,5 +1,8 @@
 .SearchTweet {
-  width: 100%;
+  width: 900px;
+  text-align: center;
+  margin: auto;
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content:space-between;
@@ -7,7 +10,8 @@
 .contentDataId {
   height: 250px;
   width: 32%;
-  border: solid;
+  background-color: white;
+  border: 1px solid #ccc;
   margin-bottom: 2px;
 }
 

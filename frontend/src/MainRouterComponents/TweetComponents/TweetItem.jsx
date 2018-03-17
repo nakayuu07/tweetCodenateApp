@@ -4,6 +4,8 @@ import $ from 'jquery'
 import TweetLikeButton from './TweetLikeButton'
 import TweetUnLikeButton from './TweetUnLikeButton'
 import TweetFollowButton from './TweetFollowButton'
+import UserInfo from './UserInfo'
+
 
 class TweetItem extends React.Component{
   constructor() {
@@ -46,10 +48,16 @@ class TweetItem extends React.Component{
   render() {
     return(
       <div className="tweet_item">
-        <div className="tweet_user">
-          <img src={this.props.data[3].image.url} alt=""/>
-          <div>{this.props.data[3].nickname}</div>
-        </div>
+        <UserInfo
+          data={this.props.data[0]}
+          userImage={this.props.data[3].image.url}
+          userNickName={this.props.data[3].nickname}
+          userSelfInfo={this.props.data[3].selfinfo}
+          userFollowers={this.props.data[4]}
+          userFollowing={this.props.data[5]}
+          userTweetSum={this.props.data[6]}
+        />
+
         <div className="show_tweet_info">
           <div className="tweet_code_image">
             <img src={this.props.data[0].code_image.url} alt="" height="200px" width="200px"/>
@@ -95,7 +103,6 @@ class TweetItem extends React.Component{
             handleMinusUnLike={(num)=>this.handleMinusUnLike(num)}
              />
           <TweetFollowButton data={this.props.data[0]} />
-
           <button>コメント</button>
         </div>
 

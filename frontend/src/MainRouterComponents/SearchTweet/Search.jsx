@@ -53,26 +53,21 @@ class Search extends React.Component {
       }
     }
     return (
-      <div className="main_body">
-        <div className="main_inear">
-          <div className="SearchTweet">
-            {this.state.tweetItem.map((data)=>{
-              return(
-                <CodenateTable data={data} key={data.id} openModal={(id) => this.openModal(id)}/>
-              )
-            })}
-          </div>
+      <div className="SearchTweet">
+        {this.state.tweetItem.map((data)=>{
+          return(
+            <CodenateTable data={data} key={data.id} openModal={(id) => this.openModal(id)}/>
+          )
+        })}
 
-          <Modal
-            isOpen={modalIsOpen}
-            style={customStyles}
-            onRequestClose={this.closeModal}
-          >
-            <DetailTweet modalData={this.state.modalData} modalUser={this.state.modalUser}/>
-          </Modal>
-        </div>
+        <Modal
+          isOpen={modalIsOpen}
+          style={customStyles}
+          onRequestClose={this.closeModal}
+        >
+          <DetailTweet modalData={this.state.modalData} modalUser={this.state.modalUser}/>
+        </Modal>
       </div>
-
     )
   }
 }

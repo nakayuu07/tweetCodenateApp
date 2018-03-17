@@ -40,13 +40,14 @@ class TweetFollowButton extends React.Component{
         headers: JSON.parse(sessionStorage.getItem('user'))
       })
       .done((results)=> {
-        console.log(results)
       })
 
       this.setState({
         buttonString: 'フォロー',
         is_follow: false
       })
+
+      this.props.handleMinusUserFollowers(this.props.numFollowers)
     }else{
       // フォロー作成
       $.ajax({
@@ -56,13 +57,13 @@ class TweetFollowButton extends React.Component{
         headers: JSON.parse(sessionStorage.getItem('user'))
       })
       .done((results)=> {
-        console.log(results)
       })
 
       this.setState({
         buttonString: "フォロー中",
         is_follow: true
-      });
+      })
+      this.props.handleAddUserFollowers(this.props.numFollowers)
     }
   }
 
@@ -77,7 +78,9 @@ class TweetFollowButton extends React.Component{
     }else{
       return(
         <div>
-          <button onClick={this.handleClick}>{this.state.buttonString}</button>
+          <div class="tw_followb" onClick={this.handleClick}>
+            {this.state.buttonString}
+          </div>
         </div>
       )
     }

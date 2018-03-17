@@ -9,7 +9,7 @@ import Logo from './Logo'
 class Header extends React.Component {
   render () {
     return (
-      <div className="header">
+      <div className="header" id="header">
         <div className="header_title">
           <span><Link to="/mypage"><UserIcon /></Link></span>
           <span><Link to="/"><Logo /></Link></span>

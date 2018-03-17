@@ -20,7 +20,6 @@ class Tweets extends React.Component {
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results) => {
-      console.log(results)
       this.setState({Tweet_item: results})
     })
   }

@@ -22,12 +22,13 @@ class MyClosetRouter extends React.Component{
     const shoes = userClosetData.filter((data)=>{
       return (data.itemtype==='shoes')
     })
+
     return (
-      <div>
-        <Route exact path={`${path}/hat`} render={()=> <MyClosetHatTable data={hat} />} />
-        <Route exact path={`${path}/tops`} render={()=> <MyClosetTopsTable data={tops} />} />
-        <Route exact path={`${path}/pants`} render={()=> <MyClosetPantsTable data={pants} />} />
-        <Route exact path={`${path}/shoes`} render={()=> <MyClosetShoesTable data={shoes} />} />
+      <div className="router">
+        <Route exact path={`${path}`} render={()=> <MyClosetHatTable data={hat} />} />
+        <Route  path={`${path}/tops`} render={()=> <MyClosetTopsTable data={tops} />} />
+        <Route  path={`${path}/pants`} render={()=> <MyClosetPantsTable data={pants} />} />
+        <Route  path={`${path}/shoes`} render={()=> <MyClosetShoesTable data={shoes} />} />
       </div>
     )
   }

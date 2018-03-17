@@ -50,3 +50,56 @@
 .num_like_unlike {
   display: flex;
 }
+
+
+.tw_followb {
+    text-decoration: none;
+    background-image: linear-gradient(#fff,#f5f8fa);
+    border: 0.5px solid #e6ecf0;
+    border-radius: 2px;
+    color: #393e42;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 4px;
+    font-weight: bold;
+    padding: 4px 7px;
+    position: relative;
+ }
+
+.tw_followb .fa-user-plus{
+  color: #1da1f3;
+}
+
+.tw_followb:hover{
+    background-color: #e6ecf0;
+    background-image: linear-gradient(#fff,#e6ecf0);
+    border-color: #e6ecf0;
+}
+
+.tippy-user-info {
+  border-radius: 3px;
+}
+
+
+.tippy-header {
+  display: flex;
+  justify-content: space-around;
+}
+
+.tippy-selfinfo {
+  text-align: center;
+}
+
+.tippy-user-image {
+  height: 30px;
+  width: 30px;
+  border-radius: 50px;
+  border: 2px solid #DCDCDC;
+}
+
+.app-user-info {
+  margin: 10px;
+  display: flex;
+  font-size: 0.7rem;
+  justify-content:  space-between;
+}

@@ -1,11 +1,12 @@
 import React from 'react'
 import $ from 'jquery'
+import FaThumbsOUp from 'react-icons/lib/fa/thumbs-o-up'
 
 class TweetLikeButton extends React.Component{
   constructor(props) {
     super(props)
     this.state={
-      buttonString: 'いいね！',
+      buttonString: 'いいね',
       tweetData: [],
       already_like: false
     }

@@ -16,9 +16,10 @@ import MyPageMain from './MyPagecomponents/MyPageMain'
 
 class MainBody extends React.Component {
   render () {
+    const path = this.props.path
     return (
       <Router>
-        <div>
+        <div className="main">
           <Header />
           <Route exact path="/" component={LoginRouter}/>
           <Route exact path="/tweets" component={Tweets}/>
@@ -26,7 +27,7 @@ class MainBody extends React.Component {
           <Route exact path="/notification" component={Notification}/>
           <Route path="/closet" component={Closet}/>
           <Route path="/tweetcreate" component={CreateTweetContainer}/>
-          <Route path="/mypage" component={MyPageMain}/>
+          <Route exact path="/mypage" component={MyPageMain}/>
           <Footer/>
         </div>
       </Router>
