@@ -14,4 +14,9 @@ Rails.application.routes.draw do
   resources :aggregate_infomations
   resources :realize_following_tweets
   resources :most_fav_tweets
+  resources :tweet_codes do
+     resources :comments
+  end
+  resources :user_edits
+  resources :recomend_users
 end

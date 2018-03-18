@@ -3,6 +3,9 @@ import TweetShow from './TweetShow'
 import './tweet.css'
 import $ from 'jquery'
 
+import MyContent from './MyContent'
+import RecomendUser from './RecomendUser'
+
 
 class Tweets extends React.Component {
   constructor() {
@@ -27,7 +30,11 @@ class Tweets extends React.Component {
   render () {
     return (
       <div className="tweet">
-        <TweetShow Tweet_item={this.state.Tweet_item}/>
+        <div className="tweet_inear">
+          <MyContent Tweet_item={this.state.Tweet_item}/>
+          <TweetShow Tweet_item={this.state.Tweet_item}/>
+          <RecomendUser />
+        </div>
       </div>
     )
   }

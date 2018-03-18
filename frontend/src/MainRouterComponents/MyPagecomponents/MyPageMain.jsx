@@ -5,6 +5,7 @@ import Modal from 'react-modal'
 import MyPageEdit from './MyPageEdit'
 import MyTweet from './MyTweet'
 import './mypage.css'
+import MyInfo from './MyInfo'
 
 import AddUserInfo from './AddUserInfo'
 
@@ -23,6 +24,7 @@ class MyPageMain extends React.Component {
       following: 0,
       follower: 0,
       modalIsOpen: false,
+      selfintro: ''
     }
   }
 
@@ -41,7 +43,8 @@ class MyPageMain extends React.Component {
                       userTweetData: res.user_tweet,
                       userTweetSum: res.user_tweet_sum,
                       following: res.user_following_sum,
-                      follower: res.user_followers_sum})
+                      follower: res.user_followers_sum,
+                      selfintro: res.user_data.selfinfo})
       if(this.state.age===null || this.state.sex===null){
         this.setState({modalIsOpen: true})
       }
@@ -73,19 +76,14 @@ class MyPageMain extends React.Component {
 
     return (
       <div>
-        <div className="mypagemain">
-          <div className="profile-image">
-            <img src={userImage.url} width="100" height="100"/>
-          </div>
-          <div className="profile-content">
-            <p>{userNickName}</p>
-          </div>
-          <div className="tweet_follow_info">
-            <p>{this.state.userTweetSum}post</p>
-            <p>{this.state.following}following</p>
-            <p>{this.state.follower}followers</p>
-          </div>
-        </div>
+        <MyInfo
+         selfintro={this.state.selfintro}
+         userImage={userImage.url}
+         userNickName={userNickName}
+         userTweetSum={this.state.userTweetSum}
+         following={this.state.following}
+         follower={this.state.follower}
+         />
 
         <div className="main_body">
           <div className="main_inear">

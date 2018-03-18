@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
+    "date-utils": "^1.2.21",
     "fabric": "^2.1.0",
     "immutability-helper": "^2.6.5",
     "j-toker": "0.0.10-beta3",

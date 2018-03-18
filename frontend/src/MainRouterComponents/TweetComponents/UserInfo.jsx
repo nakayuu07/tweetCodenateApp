@@ -67,7 +67,7 @@ class UserInfo extends React.Component {
           <Tooltip html={tippyHtml} position="bottom" interactive>
             <img src={this.props.userImage} alt=""/>
           </Tooltip>
-          <div>{this.props.userNickName}</div>
+          <div className="user-name">{this.props.userNickName}</div>
         </div>
     )
   }

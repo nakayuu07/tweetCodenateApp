@@ -5,6 +5,8 @@ class TweetCode < ApplicationRecord
   has_many :likes
   has_many :unlikes
 
+  has_many :comments
+
   def base64_conversion(uri_str, filename = 'base64')
     image_data = split_base64(uri_str)
     image_data_string = image_data[:data]

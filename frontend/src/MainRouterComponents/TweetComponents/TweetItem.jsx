@@ -5,6 +5,7 @@ import TweetLikeButton from './TweetLikeButton'
 import TweetUnLikeButton from './TweetUnLikeButton'
 import TweetFollowButton from './TweetFollowButton'
 import UserInfo from './UserInfo'
+import CommentContent from './CommentContent'
 
 
 
@@ -48,7 +49,7 @@ class TweetItem extends React.Component{
 
   render() {
     return(
-      <div className="tweet_item">
+      <div className="tweet-item-home">
         <UserInfo
           data={this.props.data[0]}
           userImage={this.props.data[3].image.url}
@@ -107,6 +108,13 @@ class TweetItem extends React.Component{
         <div className="num_like_unlike">
           <div>イイネ! {this.state.likeNum}件</div>
           <div>ワルイ! {this.state.unlikeNum}件</div>
+        </div>
+
+        <div>
+          <CommentContent
+           tweetId={this.props.data[0].id}
+           data={this.props.data[0]}
+            />
         </div>
       </div>
     )
