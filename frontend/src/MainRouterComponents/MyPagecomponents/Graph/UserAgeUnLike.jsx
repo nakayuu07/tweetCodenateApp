@@ -32,8 +32,8 @@ class UserAgeUnLike extends React.Component {
       <div>
         <Bar
           data={data}
-          width={400}
-          height={300}
+          width={200}
+          height={150}
           options={{
             maintainAspectRatio: false
           }}

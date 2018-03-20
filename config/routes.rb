@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   end
   resources :user_edits
   resources :recomend_users
+  resources :ware_registrations
 end

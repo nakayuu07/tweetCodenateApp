@@ -1,7 +1,7 @@
 class WantClosetsController < ApplicationController
 
   # before_action :authenticate_user!
-
+  #ぶっ壊す予定
   def index
     @WantClosetItem = current_user.want_closets.all
     render json: @WantClosetItem

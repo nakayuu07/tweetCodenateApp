@@ -20,36 +20,42 @@ class CreateTweetContainer extends React.Component{
   componentDidMount() {
     $.ajax({
       type: 'GET',
-      url: 'http://localhost:3001//want_closets',
+      url: 'http://localhost:3001//ware_registrations',
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results) => {
+
       this.setState({Mydata: results})
     })
   }
 
   MayTweetHat(hat) {
-    // debugger
-    this.setState({Tweethat: hat})
+    this.setState({Tweethat: hat.map((a) => typeof(a) === 'object' ?  a.url : a)})
   }
 
   MayTweetTops(tops) {
-    this.setState({Tweettops: tops})
+    this.setState({Tweettops: tops.map((a) => typeof(a) === 'object' ?  a.url : a)})
   }
 
   MayTweetPants(pants) {
-    this.setState({Tweetpants: pants})
+    this.setState({Tweetpants: pants.map((a) => typeof(a) === 'object' ?  a.url : a)})
   }
 
   MayTweetShoes(shoes) {
-    this.setState({Tweetshoes: shoes})
+    this.setState({Tweetshoes: shoes.map((a) => typeof(a) === 'object' ?  a.url : a)})
   }
 
   render() {
     return(
       <div>
         <div className="May_tweet_table">
-          <MayTweetTable data={this.state}/>
+          <MayTweetTable
+           data={this.state}
+           Tweethat={this.state.Tweethat}
+           Tweettops={this.state.Tweettops}
+           Tweetpants={this.state.Tweetpants}
+           Tweetshoes={this.state.Tweetshoes}
+           history={this.props.history}/>
         </div>
         <MyClosetSelectorForTweet url={this.props.match.url} />
         <div className="main_body_tweet">

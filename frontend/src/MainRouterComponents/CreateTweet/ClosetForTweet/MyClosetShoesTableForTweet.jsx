@@ -13,7 +13,7 @@ class MyClosetShoesTableForTweet extends React.Component{
           let shoes_array = Object.keys(shoes).map(key => shoes[key])
           return(
             <div className="item-frame" key={shoes.id} onClick={() => this.props.selectItemFunction(shoes_array)}>
-              <img alt='' src={shoes.image} />
+              <img alt='' src={shoes.image.url} />
             </div>
           )
         })}

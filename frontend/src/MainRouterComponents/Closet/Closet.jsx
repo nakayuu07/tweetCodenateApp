@@ -1,6 +1,5 @@
 import React from 'react';
 import Modal from 'react-modal'
-import axios from 'axios'
 import $ from 'jquery'
 import MyClosetSelector from './MyClosetSelector'
 
@@ -8,22 +7,23 @@ import ItemSearch from './ItemSearch'
 import SearchResult from './SearchResult'
 import MyCloset from './MyCloset'
 import './closet.css'
+import RegistratedItemSearchForm from './RegistratedItemSearchForm'
+import RegistratItemForm from './RegistratItemForm'
 
 class Closet extends React.Component {
   constructor() {
     super()
     this.state = {
-      item: '入力してください',
-      data: [],
       userClosetData: [],
-      modalIsOpen: false
+      RegistratedmodalIsOpen: false,
+      RegistratmodalIsOpen: false,
     }
   }
 
   componentDidMount() {
     $.ajax({
       type: 'GET',
-      url: 'http://localhost:3001//want_closets',
+      url: 'http://localhost:3001//ware_registrations',
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results) =>{
@@ -31,25 +31,24 @@ class Closet extends React.Component {
     })
   }
 
-  handleSubmit = (e) => {
-      e.preventDefault()
-      axios.get('http://localhost:3001/wear_items', { params: { search: this.state.item } })
-      .then((results) => {
-        this.setState({ data: results.data })
-        this.setState({ modalIsOpen: true })
-      })
-      .catch(() => {
-        console.log('通信に失敗しました')
-      })
-    }
+  handleRegistratedmodalIsOpen() {
+    this.setState({RegistratedmodalIsOpen: true})
+  }
 
-  CloseSearchResult = () => this.setState(() => ({ modalIsOpen: false }))
+  handleRegistratmodalIsOpen() {
+    this.setState({RegistratmodalIsOpen: true})
+  }
 
-  handlePlaceChange = (item) => this.setState(() => ({ item }))
+  CloseSearchResult = () => this.setState(() => ({ RegistratedmodalIsOpen: false }))
+
+  CloseRegistratResult = () => this.setState(() => ({ RegistratmodalIsOpen: false }))
+
 
 
   render () {
     const modalIsOpen = this.state.modalIsOpen
+    const RegistratedmodalIsOpen = this.state.RegistratedmodalIsOpen
+    const RegistratmodalIsOpen = this.state.RegistratmodalIsOpen
     Modal.setAppElement('div')
     const customStyles = {
       content : {
@@ -65,12 +64,22 @@ class Closet extends React.Component {
     return (
       <div className="closet-container">
         <div className="closet">
-          <ItemSearch item={this.state.item} handlePlaceChange={ this.handlePlaceChange } handleSubmit={ this.handleSubmit }  />
+
+          <button onClick={()=>this.handleRegistratedmodalIsOpen()}>アイテムを検索する</button>
+          <button onClick={()=>this.handleRegistratmodalIsOpen()}>アイテムをを登録する</button>
+
           <MyClosetSelector url={this.props.match.url}/>
           <div className="main_body_closet">
             <MyCloset userClosetData={this.state.userClosetData} match={this.props.match}/>
-            <Modal isOpen={modalIsOpen} style={customStyles}>
-               <SearchResult data={ this.state.data } CloseSearchResult={ this.CloseSearchResult }/>
+
+            <Modal isOpen={RegistratedmodalIsOpen} style={customStyles}>
+              <RegistratedItemSearchForm
+                CloseSearchResult={ this.CloseSearchResult }
+              />
+            </Modal>
+
+            <Modal isOpen={RegistratmodalIsOpen} style={customStyles}>
+              <RegistratItemForm CloseRegistratResult={this.CloseRegistratResult}/>
             </Modal>
           </div>
         </div>

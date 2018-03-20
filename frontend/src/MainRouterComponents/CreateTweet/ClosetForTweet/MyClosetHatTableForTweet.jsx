@@ -10,7 +10,7 @@ class MyClosetHatTableForTweet extends React.Component{
           let hat_array = Object.keys(hat).map(key => hat[key])
           return(
             <div className="item-frame" key={hat.id} onClick={() => this.props.selectItemFunction(hat_array)}>
-              <img alt='' src={hat.image} />
+              <img alt='' src={hat.image.url} />
             </div>
           )
         })}

@@ -15,6 +15,7 @@ class SearchResult extends React.Component {
               {this.props.data.map((data) => {
                 return(
                 <SearchResultForm key={data.id}
+                                  dataId={data.id}
                                   maker={data.maker}
                                   title={data.title}
                                   image={data.image.url}

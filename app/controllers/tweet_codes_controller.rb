@@ -8,6 +8,7 @@ class TweetCodesController < ApplicationController
   end
 
   def create
+    binding.pry
     code_image = base64_conversion(params[:params][:code_image])
     sorted_tweet_data = TweetCode.sort_tweet_item(tweet_params, params[:params][:code_image])
     sorted_tweet_data[:code_image] = code_image

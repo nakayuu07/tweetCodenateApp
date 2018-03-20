@@ -1,5 +1,6 @@
 import React from 'react';
 import $ from 'jquery';
+import { withRouter } from 'react-router';
 import TextField from 'material-ui/TextField';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import RaisedButton from 'material-ui/RaisedButton';
@@ -32,6 +33,7 @@ class Login extends React.Component {
           uid: response.data.uid
         }));
       console.log('successlog')
+      this.props.history.push('/tweets')
     })
   }
 
@@ -70,4 +72,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login
+export default withRouter(Login)

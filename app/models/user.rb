@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
   mount_uploader :image, ImageUploader
 
+  has_many :ware_registrations
 
   has_many :likes
   has_many :unlikes

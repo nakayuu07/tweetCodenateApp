@@ -38,10 +38,46 @@
 /* header */
 
 .top-header {
-  padding: 360px 30px;
+  background-color:rgba(0,0,0,0.5);
+  padding: 300px 30px;
 }
 
-.site-title {
+.top-header h1{
+  color: white;
+  margin: 0;
+  font-size: 40px;
+}
+
+.top-header h3{
+  color: white;
+  margin: 0;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.header-button {
+  margin-top: 30px;
+  color: white;
+  font-size: 15px;
+  border: medium solid white;
+  border-radius: 20px ;
+  width: 200px;
+  text-align: center;
+  margin: 10px auto;
+}
+
+.header-button p {
+  margin: 5px 5px;
+}
+
+.header-button:hover {
+  background-color: white;
+  color: black;
+}
+
+
+
+/* .site-title {
   animation-name: anime1;
   animation-duration: 5s;
   animation-timing-function: ease;
@@ -52,7 +88,7 @@
 @keyframes anime1 {
 0% {color: white;}
 100% {color: black;}
-}
+} */
 
 
 /* section1 */

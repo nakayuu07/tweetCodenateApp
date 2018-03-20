@@ -5,13 +5,14 @@ import $ from 'jquery'
 
 import MyContent from './MyContent'
 import RecomendUser from './RecomendUser'
-
+import Modal from 'react-modal'
 
 class Tweets extends React.Component {
   constructor() {
     super()
     this.state={
-      Tweet_item: []
+      Tweet_item: [],
+      modalIsOpen: true,
     }
   }
 
@@ -27,7 +28,28 @@ class Tweets extends React.Component {
     })
   }
 
+  handleOpenModal() {
+    this.setState({modalIsOpen: true})
+  }
+
+  handleCloseModal() {
+    this.setState({modalIsOpen: false})
+  }
+
   render () {
+    const modalIsOpen = this.state.modalIsOpen
+    Modal.setAppElement('div')
+    const customStyles = {
+      content : {
+        top                   : '40%',
+        left                  : '50%',
+        right                 : 'auto',
+        bottom                : 'auto',
+        marginRight           : '-20%',
+        transform             : 'translate(-50%, -50%)'
+      }
+    }
+
     return (
       <div className="tweet">
         <div className="tweet_inear">

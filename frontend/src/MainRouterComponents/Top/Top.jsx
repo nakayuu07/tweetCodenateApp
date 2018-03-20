@@ -12,11 +12,11 @@ class Top extends React.Component {
   render () {
     return (
       <div className="top-body">
-        <TopHeader />
+        <TopHeader history={this.props.history}/>
         <Section3 />
         <Section2 />
         <Section1 />
-        <Section4 />
+        <Section4 history={this.props.history}/>
         <TopFooter />
       </div>
     )

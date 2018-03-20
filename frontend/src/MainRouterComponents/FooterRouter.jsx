@@ -24,12 +24,9 @@ class Footer extends React.Component {
     } else {
       return (
         <div className="footer">
-           <ul>
-             <li><Home /></li>
-             <li><Search /></li>
-             <li><Bel /></li>
-             <li><Box /></li>
-           </ul>
+          <div className="non-login-footer">
+            みんなの投稿を見てみる
+          </div>
         </div>
       )
     }

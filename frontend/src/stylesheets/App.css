@@ -107,6 +107,10 @@
   font-size: 30px;
 }
 
+.non-login-footer {
+  margin-top: 10px;
+}
+
 a {
    text-decoration: none;
  }

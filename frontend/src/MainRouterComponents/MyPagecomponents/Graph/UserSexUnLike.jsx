@@ -40,8 +40,8 @@ class UserSexUnLike extends React.Component{
     return (
       <Pie
         data={data}
-        width={400}
-        height={400}
+        width={250}
+        height={250}
         options={options}
         />
     )

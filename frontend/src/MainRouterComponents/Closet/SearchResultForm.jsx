@@ -5,10 +5,11 @@ const SearchResultForm = (props) => {
   this.RegistrationItem = () => {
     $.ajax({
       type: 'POST',
-      url: 'http://localhost:3001//want_closets',
+      url: 'http://localhost:3001//ware_registrations',
       data: {params: { image: props.image, maker: props.maker,
                        title: props.title,itemtype: props.itemtype,
-                       itemClass: props.itemClass}},
+                       itemClass: props.itemClass,
+                       dataId: props.dataId}},
       headers: JSON.parse(sessionStorage.getItem('user'))
     })
     .done((results) =>{

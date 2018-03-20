@@ -14,7 +14,7 @@ class MyClosetHatTable extends React.Component{
   handleOpenModal(){
     this.setState({modalIsOpen: true})
   }
-
+x
   render() {
     const modalIsOpen = this.state.modalIsOpen
     Modal.setAppElement('div')
@@ -32,9 +32,10 @@ class MyClosetHatTable extends React.Component{
     return (
       <div className="MyClosetTable">
         {this.props.data.map((hat) => {
+          console.log(hat)
           return(
             <div className="item_frame" key={hat.id} onClick={()=>this.handleOpenModal()}>
-              <img alt='' src={hat.image} height="100px" width="100px" />
+              <img alt='' src={hat.image.url} height="100px" width="100px" />
               <Modal
                 isOpen={modalIsOpen}
                 style={customStyles}

@@ -35,7 +35,7 @@ class MyClosetShoesTable extends React.Component{
         {this.props.data.map((shoes) => {
           return(
             <div className="item_frame" key={shoes.id} onClick={()=>this.handleOpenModal()}>
-              <img alt='' src={shoes.image} width="100" height="100"/>
+              <img alt='' src={shoes.image.url} width="100" height="100"/>
               <Modal
                 isOpen={modalIsOpen}
                 style={customStyles}

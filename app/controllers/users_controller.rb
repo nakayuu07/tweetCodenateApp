@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   def index
-    binding.pry
   end
 
   def show
@@ -24,7 +23,6 @@ class UsersController < ApplicationController
       contents[:nickname] = params[:nickname]
       contents[:sex] = params[:sex]
       contents[:age] = params[:age]
-
       current_user.update(image: contents[:image], nickname: contents[:nickname],
                           sex: contents[:sex], age: contents[:age])
       @response = {response: true}

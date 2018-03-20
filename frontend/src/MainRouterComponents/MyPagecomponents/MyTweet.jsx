@@ -1,5 +1,6 @@
 import React from 'react'
 import Modal from 'react-modal'
+import {Tooltip} from 'react-tippy';
 import DetailTweetCode from './DetailTweetCode'
 
 class MyTweet extends React.Component{
@@ -33,7 +34,9 @@ class MyTweet extends React.Component{
 
     return(
       <div className="mytweet">
-        <img src={this.props.data.code_image.url} onClick={() => this.handleChangeModal()}/>
+        <Tooltip html={(<div>評価が見れるよ！</div>)} position="bottom">
+          <img src={this.props.data.code_image.url} onClick={() => this.handleChangeModal()}/>
+        </Tooltip>
         <Modal
           isOpen={modalIsOpen}
           style={customStyles}

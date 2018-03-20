@@ -74,7 +74,7 @@
 .mytweet {
   height: 250px;
   width: 32%;
-  border: solid;
+  border: 1px solid #ccc;
   margin-bottom: 2px;
   position: relative;
 }
