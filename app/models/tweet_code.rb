@@ -1,11 +1,56 @@
 class TweetCode < ApplicationRecord
-  belongs_to :user
   mount_uploader :code_image, ImageUploader
+  # include AgeModule
+  belongs_to :user
 
   has_many :likes
   has_many :unlikes
 
   has_many :comments
+
+  def self.change_age(age)
+    if age.between?(0,19)
+      return :s10
+    elsif age.between?(20,29) then
+      return :s20
+    elsif age.between?(30,39) then
+      return :s30
+    elsif age.between?(40,49) then
+      return :s40
+    elsif age.between?(50,59) then
+      return :s50
+    else
+      return :over60
+    end
+  end
+
+  def self.aggregate_like_users(likes)
+    likes_hash = likes.pluck(:age,:sex)
+    like_users_age = {'s10': 0, 's20': 0, 's30': 0, 's40': 0, 's50': 0, 'over60': 0}
+    like_users_sex = {'man': 0, 'woman': 0}
+
+    likes_hash.each do |user_info|
+      user_info[1] == 1 ? like_users_sex[:man] += 1 : like_users_sex[:woman] += 1 
+      changed_age = TweetCode.change_age(user_info[0])
+      like_users_age[changed_age] +=1
+    end
+
+    return like_users_age, like_users_sex
+  end
+
+  def self.aggregate_unlike_users(unlikes)
+    unlikes_hash = unlikes.pluck(:age,:sex)
+    unlike_users_age = {'s10': 0, 's20': 0, 's30': 0, 's40': 0, 's50': 0, 'over60': 0}
+    unlike_users_sex = {'man': 0, 'woman': 0}
+
+    unlikes_hash.each do |user_info|
+      user_info[1] == 1 ? unlike_users_sex[:man] += 1 : unlike_users_sex[:woman] += 1 
+      changed_age = TweetCode.change_age(user_info[0])
+      unlike_users_age[changed_age] +=1
+    end
+    return unlike_users_age, unlike_users_sex
+  end
+
 
   def base64_conversion(uri_str, filename = 'base64')
     image_data = split_base64(uri_str)

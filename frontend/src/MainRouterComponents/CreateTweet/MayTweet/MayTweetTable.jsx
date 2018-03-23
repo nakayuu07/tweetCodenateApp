@@ -20,27 +20,23 @@ class MayTweetTable extends React.Component{
 
 
   handleSubmitTweet = (history) => {
-
-    debugger
-
-    var casper = require('casper').create();
-    // $.ajax({
-    //   type: 'POST',
-    //   url: 'http://localhost:3001//tweet_codes',
-    //   data: {params :{tweet_item_hat: this.props.Tweethat,
-    //                   tweet_item_tops: this.props.Tweettops,
-    //                   tweet_item_pants: this.props.Tweetpants,
-    //                   tweet_item_shoes: this.props.Tweetshoes,
-    //                   code_image: this.state.doneCodeImage,
-    //                 }},
-    //   headers: JSON.parse(sessionStorage.getItem('user'))
-    // })
-    // .done((results) => {
-    //   history.push('/tweets')
-    // })
-    // .fail((data)=>{
-    //   console.log('fails')
-    // })
+    $.ajax({
+      type: 'POST',
+      url: 'http://localhost:3001//tweet_codes',
+      data: {params :{tweet_item_hat: this.props.Tweethat,
+                      tweet_item_tops: this.props.Tweettops,
+                      tweet_item_pants: this.props.Tweetpants,
+                      tweet_item_shoes: this.props.Tweetshoes,
+                      code_image: this.state.doneCodeImage,
+                    }},
+      headers: JSON.parse(sessionStorage.getItem('user'))
+    })
+    .done((results) => {
+      history.push('/tweets')
+    })
+    .fail((data)=>{
+      console.log('fails')
+    })
   }
 
   makeCodeImage = () => {

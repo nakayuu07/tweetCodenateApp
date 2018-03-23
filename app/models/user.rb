@@ -24,7 +24,4 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
 
   #TwitterLogin
-
-
-
 end
